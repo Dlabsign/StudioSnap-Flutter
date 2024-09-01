@@ -10,7 +10,7 @@ class NameComp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       child: Column(
         children: [
           Text(
@@ -23,11 +23,10 @@ class NameComp extends StatelessWidget {
             ),
           ),
           Text(
-            '$userName',
+            userName.toUpperCase(),
             style: GoogleFonts.jost(
               color: Colors.black,
               fontSize: 20,
-              fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w600,
               letterSpacing: 0.24,
             ),

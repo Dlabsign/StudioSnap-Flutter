@@ -47,7 +47,12 @@ class DatabaseHelper {
 
   Future<int> insertUser(Users user) async {
     Database db = await database;
-    return await db.insert('users', user.toMap());
+    int result = await db.insert('users', user.toMap());
+
+    // Log data pengguna yang baru disimpan
+    print('User inserted: ${user.toMap()} with ID: $result');
+
+    return result;
   }
 
   Future<Users?> getUserByEmail(String email) async {

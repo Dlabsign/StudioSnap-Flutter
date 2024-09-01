@@ -5,11 +5,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
 
   @override
-  Size get preferredSize => const Size.fromHeight(150);
+  Size get preferredSize => const Size.fromHeight(120);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -24,7 +25,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             double logoHeight = constraints.maxWidth > 600 ? 80 : 60;
 
             return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   "Capture Your Moment With",

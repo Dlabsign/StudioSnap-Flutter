@@ -35,6 +35,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
       // Simpan data pengguna ke database
       await dbHelper.insertUser(newUser);
+      // Log semua data pengguna yang ada di database
+      List<Users> allUsers = await dbHelper.getAllUsers();
+      allUsers.forEach((user) {
+        print('User: ${user.toMap()}');
+      });
 
       // Simpan data pengguna ke file JSON
       await dbHelper.saveUsersToTxt(context);
