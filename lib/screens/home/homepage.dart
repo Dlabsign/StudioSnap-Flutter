@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:studiosnap/components/bottombar.dart';
+import 'package:studiosnap/screens/home/photopage/photobox.dart';
+import 'package:studiosnap/screens/home/photopage/selfphoto.dart';
 import 'package:studiosnap/screens/home/comp/clickable-con.dart';
 import 'package:studiosnap/screens/home/comp/desc.dart';
 import 'package:studiosnap/screens/home/comp/homeappbar.dart';
@@ -55,6 +57,13 @@ class _HomePageState extends State<HomePage> {
                               ),
                               child: MenuButton(
                                 BtnTitle: "Self Photo",
+                                onPress: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => selfPhotoPage(),
+                                      ));
+                                },
                                 BtnDesc:
                                     "Automated self-portrait sessions, perfect for profile or ID photos",
                               ),
@@ -85,6 +94,13 @@ class _HomePageState extends State<HomePage> {
                                 BtnTitle: "Wide Photobox",
                                 BtnDesc:
                                     "Studio setup for high-quality video production, including lighting and sound.",
+                                onPress: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => PhotoBox(),
+                                      ));
+                                },
                               ),
                             ),
                             SizedBox(

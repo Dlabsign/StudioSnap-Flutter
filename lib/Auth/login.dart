@@ -112,8 +112,8 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         InputComp(
-                          label: 'Email',
-                          placeholder: "Masukkan Email",
+                          label: 'Username',
+                          placeholder: "Masukkan Username",
                           controller: UserEmail,
                         ),
                         const SizedBox(height: 25),

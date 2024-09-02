@@ -118,8 +118,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           InputComp(
-                            label: 'Nama',
-                            placeholder: "Masukkan Nama",
+                            label: 'Username',
+                            placeholder: "Masukkan Username",
                             controller: UserEmail,
                           ),
                           const SizedBox(height: 25),

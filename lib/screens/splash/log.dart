@@ -24,7 +24,7 @@ class LogPage extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Image.asset(
-                    'assets/image/splash/photo2.jpg',
+                    'assets/image/splash/splashscreen_img.jpg',
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: double.infinity,

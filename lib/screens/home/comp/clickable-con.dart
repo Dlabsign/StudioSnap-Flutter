@@ -4,13 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 class MenuButton extends StatelessWidget {
   final String BtnTitle;
   final String BtnDesc;
+  final VoidCallback? onPress;
 
-  const MenuButton({super.key, required this.BtnTitle, required this.BtnDesc});
+  const MenuButton(
+      {super.key, required this.BtnTitle, required this.BtnDesc, this.onPress});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPress,
       child: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 26),
