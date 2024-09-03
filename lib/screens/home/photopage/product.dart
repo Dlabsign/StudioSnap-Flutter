@@ -5,15 +5,15 @@ import 'package:studiosnap/screens/booking/bookingpage.dart';
 import 'package:studiosnap/screens/home/comp/headline-desc.dart';
 import 'package:studiosnap/screens/home/comp/photocard.dart';
 
-class PhotoBox extends StatefulWidget {
+class ProductPage extends StatefulWidget {
   final String userName;
-  const PhotoBox({super.key, required this.userName});
+  const ProductPage({super.key, required this.userName});
 
   @override
-  State<PhotoBox> createState() => PhotoBoxState();
+  State<ProductPage> createState() => ProductPageState();
 }
 
-class PhotoBoxState extends State<PhotoBox> {
+class ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class PhotoBoxState extends State<PhotoBox> {
           ),
         ),
         title: Text(
-          "PhotoBox",
+          "Product Photo",
           style: GoogleFonts.jost(
             color: Colors.black,
             fontSize: 24,
@@ -77,10 +77,9 @@ class PhotoBoxState extends State<PhotoBox> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 40),
               child: AboutTitle(
-                Headline:
-                    "Jadikan setiap acara tak terlupakan dengan foto instan yang menyenangkan.",
+                Headline: "Tampilkan produk Anda dengan gaya profesional.",
                 Desc:
-                    "Photo Booth kami dilengkapi dengan tema dan latar belakang yang dapat disesuaikan, menjadikannya tambahan sempurna untuk acara apapun. Para tamu dapat membawa pulang cetakan berkualitas tinggi sebagai kenang-kenangan yang menyenangkan.",
+                    "Tingkatkan tampilan toko online atau katalog Anda dengan layanan Product Photography kami. Kami menyediakan pencahayaan dan styling yang ahli untuk memastikan produk Anda ditampilkan dalam kondisi terbaik, membantu Anda menarik dan mempertahankan pelanggan.",
               ),
             ),
             PhotoCard(),
@@ -88,7 +87,7 @@ class PhotoBoxState extends State<PhotoBox> {
               padding: EdgeInsets.symmetric(vertical: 40),
               child: AboutTitle(
                 Desc:
-                    "Maximum Occupancy: Up to 6 people per photo.\nEvent Duration: The photo booth can be rented for a minimum of 2 hours.\nCustomization: Custom themes and backgrounds must be requested at least 7 days in advance.",
+                    "Product Limit: Up to 20 items per session.\nTime Limit: Sessions are available in 2-hour blocks.\nRevisions: One round of edits is included; additional edits may incur extra charges.",
                 Headline: "Syarat dan Ketentuan",
               ),
             ),

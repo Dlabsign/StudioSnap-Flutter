@@ -5,15 +5,15 @@ import 'package:studiosnap/screens/booking/bookingpage.dart';
 import 'package:studiosnap/screens/home/comp/headline-desc.dart';
 import 'package:studiosnap/screens/home/comp/photocard.dart';
 
-class PhotoBox extends StatefulWidget {
+class EventPage extends StatefulWidget {
   final String userName;
-  const PhotoBox({super.key, required this.userName});
+  const EventPage({super.key, required this.userName});
 
   @override
-  State<PhotoBox> createState() => PhotoBoxState();
+  State<EventPage> createState() => EventPageState();
 }
 
-class PhotoBoxState extends State<PhotoBox> {
+class EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class PhotoBoxState extends State<PhotoBox> {
           ),
         ),
         title: Text(
-          "PhotoBox",
+          "Event Photo",
           style: GoogleFonts.jost(
             color: Colors.black,
             fontSize: 24,
@@ -77,10 +77,9 @@ class PhotoBoxState extends State<PhotoBox> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 40),
               child: AboutTitle(
-                Headline:
-                    "Jadikan setiap acara tak terlupakan dengan foto instan yang menyenangkan.",
+                Headline: "Abadikan setiap momen, dari awal hingga akhir.",
                 Desc:
-                    "Photo Booth kami dilengkapi dengan tema dan latar belakang yang dapat disesuaikan, menjadikannya tambahan sempurna untuk acara apapun. Para tamu dapat membawa pulang cetakan berkualitas tinggi sebagai kenang-kenangan yang menyenangkan.",
+                    "Layanan Event Photography kami mencakup semua jenis acara, mulai dari pernikahan hingga seminar perusahaan. Fotografer profesional kami terampil dalam menangkap esensi acara Anda, memastikan tidak ada momen yang terlewatkan.",
               ),
             ),
             PhotoCard(),
@@ -88,7 +87,7 @@ class PhotoBoxState extends State<PhotoBox> {
               padding: EdgeInsets.symmetric(vertical: 40),
               child: AboutTitle(
                 Desc:
-                    "Maximum Occupancy: Up to 6 people per photo.\nEvent Duration: The photo booth can be rented for a minimum of 2 hours.\nCustomization: Custom themes and backgrounds must be requested at least 7 days in advance.",
+                    "Booking Requirement: Must be booked at least 2 weeks in advance. \nDuration: A minimum booking of 4 hours is required.\nDeliverables: Includes up to 100 edited photos; additional photos can be requested for an extra fee.",
                 Headline: "Syarat dan Ketentuan",
               ),
             ),

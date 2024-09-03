@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studiosnap/components/bottombar.dart';
+import 'package:studiosnap/screens/booking/calendar.dart';
+import 'package:studiosnap/screens/home/comp/homeappbar.dart';
 
 class BookingPageInt extends StatefulWidget {
   final String userName;
@@ -20,12 +22,18 @@ class _BookingPageIntState extends State<BookingPageInt> {
             currentIndex: 1,
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Booking Page"),
-          ],
+        appBar: HomeAppBar(),
+        body: const SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CalendarWidget(),
+              ],
+            ),
+          ),
         ));
   }
 }

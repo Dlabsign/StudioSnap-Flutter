@@ -22,6 +22,7 @@ class AboutTitle extends StatelessWidget {
               fontWeight: FontWeight.w700,
               letterSpacing: 0.24,
             ),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 7.5,

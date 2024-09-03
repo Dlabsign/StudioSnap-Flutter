@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:studiosnap/components/bottombar.dart';
+import 'package:studiosnap/screens/home/photopage/event.dart';
 import 'package:studiosnap/screens/home/photopage/photobox.dart';
+import 'package:studiosnap/screens/home/photopage/product.dart';
 import 'package:studiosnap/screens/home/photopage/selfphoto.dart';
 import 'package:studiosnap/screens/home/comp/clickable-con.dart';
 import 'package:studiosnap/screens/home/comp/desc.dart';
@@ -61,7 +63,9 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => selfPhotoPage(),
+                                        builder: (context) => selfPhotoPage(
+                                          userName: widget.userName,
+                                        ),
                                       ));
                                 },
                                 BtnDesc:
@@ -77,6 +81,15 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(13),
                               ),
                               child: MenuButton(
+                                onPress: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ProductPage(
+                                          userName: widget.userName,
+                                        ),
+                                      ));
+                                },
                                 BtnTitle: "Product Photography",
                                 BtnDesc:
                                     "Professional product shoots for catalogs and online stores.",
@@ -98,7 +111,9 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => PhotoBox(),
+                                        builder: (context) => PhotoBox(
+                                          userName: widget.userName,
+                                        ),
                                       ));
                                 },
                               ),
@@ -112,6 +127,15 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(13),
                               ),
                               child: MenuButton(
+                                onPress: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => EventPage(
+                                          userName: widget.userName,
+                                        ),
+                                      ));
+                                },
                                 BtnTitle: "Event Photography",
                                 BtnDesc:
                                     "Professional photography services for weddings, seminars, and more.",
