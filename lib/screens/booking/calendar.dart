@@ -238,7 +238,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                         key: _qrKey,
                         child: QrImageView(
                           data:
-                              "Tanggal:\t ${today.toString().split(" ")[0]}, \n Waktu:\t ${selectedTime!.format(context)}\n Tipe Layanan:\t $selectedService\n Status telah terbooking",
+                              "Tanggal:\t (${today.toString().split(" ")[0]}), | \n Waktu:\t (${selectedTime!.format(context)})\n | Tipe Layanan:\t ($selectedService)\n | Nama Pemesan:\n (**${widget.userName}**)",
                           version: QrVersions.auto,
                           size: 200.0,
                           foregroundColor: ui.Color.fromARGB(255, 226, 255, 4),
