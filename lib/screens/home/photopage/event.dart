@@ -18,7 +18,7 @@ class EventPageState extends State<EventPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(18),
