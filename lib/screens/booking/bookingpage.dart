@@ -23,15 +23,13 @@ class _BookingPageIntState extends State<BookingPageInt> {
           ),
         ),
         appBar: HomeAppBar(),
-        body: const SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                CalendarWidget(),
-              ],
+              children: [CalendarWidget(userName: widget.userName)],
             ),
           ),
         ));
