@@ -28,30 +28,44 @@ class DatabaseHelper {
 
     return openDatabase(
       path,
-      version: 1,
+      version: 2, // Perbarui versi jika Anda menambahkan kolom baru
       onCreate: _onCreate,
+      onUpgrade: _onUpgrade,
     );
   }
 
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
-      CREATE TABLE users(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user TEXT,
-        nama TEXT,
-        pass TEXT,
-        tlpn INTEGER
-      )
+    CREATE TABLE users(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user TEXT,
+      nama TEXT,
+      email TEXT,  // Kolom email yang baru
+      pass TEXT,
+      tlpn INTEGER
+    )
     ''');
+  }
+
+  Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      await db.execute('ALTER TABLE users ADD COLUMN email TEXT');
+    }
+  }
+
+  Future<List<Users>> getAllUsers() async {
+    Database db = await database;
+    final List<Map<String, dynamic>> maps = await db.query('users');
+
+    return List.generate(maps.length, (i) {
+      return Users.fromMap(maps[i]);
+    });
   }
 
   Future<int> insertUser(Users user) async {
     Database db = await database;
     int result = await db.insert('users', user.toMap());
-
-    // Log data pengguna yang baru disimpan
     print('User inserted: ${user.toMap()} with ID: $result');
-
     return result;
   }
 
@@ -64,15 +78,6 @@ class DatabaseHelper {
       return Users.fromMap(maps.first);
     }
     return null;
-  }
-
-  Future<List<Users>> getAllUsers() async {
-    Database db = await database;
-    final List<Map<String, dynamic>> maps = await db.query('users');
-
-    return List.generate(maps.length, (i) {
-      return Users.fromMap(maps[i]);
-    });
   }
 
   Future<int> updateUser(Users user) async {
@@ -99,6 +104,7 @@ class DatabaseHelper {
       for (var user in users) {
         sb.writeln('User: ${user.user}');
         sb.writeln('Nama: ${user.nama}');
+        sb.writeln('Email: ${user.email}'); // Tambahkan email ke file
         sb.writeln('Password: ${user.pass}');
         sb.writeln('Telepon: ${user.tlpn}');
         sb.writeln('------------------------');

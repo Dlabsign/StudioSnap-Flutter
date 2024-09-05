@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,6 +15,10 @@ class AppAbout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mendapatkan ukuran layar
+    final size = MediaQuery.of(context).size;
+    final bool isSmallScreen = size.width < 600;
+
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
@@ -38,24 +41,28 @@ class AppAbout extends StatelessWidget {
                     color: const Color(0xFF0404B2),
                   ),
                 ),
-                child: const CircleAvatar(
-                  radius: 70,
-                  foregroundImage: AssetImage('assets/image/daniel.jpg'),
+                child: CircleAvatar(
+                  radius: isSmallScreen ? 50 : 70, // Responsive radius
+                  foregroundImage: const AssetImage('assets/image/daniel.jpg'),
                 ),
               ),
             ),
             const SizedBox(height: 12),
             Text(
               "Daniel Kurnia",
-              style: GoogleFonts.jost(fontSize: 24, color: Colors.black54),
+              style: GoogleFonts.jost(
+                fontSize: isSmallScreen ? 20 : 24, // Responsive font size
+                color: Colors.black54,
+              ),
             ),
             const SizedBox(height: 12),
             Text(
               "#Designer | #FrontEndDeveloper",
               style: GoogleFonts.jost(
-                  fontSize: 16,
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w400),
+                fontSize: isSmallScreen ? 14 : 16, // Responsive font size
+                color: Colors.black54,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(height: 30),
             Row(
@@ -67,92 +74,97 @@ class AppAbout extends StatelessWidget {
                     _launchUrl("https://github.com/Dlabsign");
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isSmallScreen ? 15 : 20, 
+                      vertical: isSmallScreen ? 8 : 10
+                    ), // Responsive padding
                     decoration: BoxDecoration(
-                        color: Color(0xFFE9FC50),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                      color: const Color(0xFFE9FC50),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
                           'assets/icon/github.png',
                           fit: BoxFit.cover,
-                          height: 20,
+                          height: isSmallScreen ? 16 : 20, // Responsive icon size
                         ),
-                        SizedBox(
-                          width: 6,
-                        ),
+                        const SizedBox(width: 6),
                         Text(
                           "Github",
                           style: GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: Colors.black,
+                            fontSize: isSmallScreen ? 11 : 14, // Responsive font size
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 9,
-                ),
+                const SizedBox(width: 9),
                 GestureDetector(
                   onTap: () {
                     _launchUrl("https://www.instagram.com/danielkuptr/?hl=id");
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isSmallScreen ? 15 : 20, 
+                      vertical: isSmallScreen ? 8 : 10
+                    ), // Responsive padding
                     decoration: BoxDecoration(
-                        color: Color(0xFFE9FC50),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                      color: const Color(0xFFE9FC50),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
                           'assets/icon/instagram.png',
                           fit: BoxFit.cover,
-                          height: 20,
+                          height: isSmallScreen ? 16 : 20, // Responsive icon size
                         ),
-                        SizedBox(
-                          width: 6,
-                        ),
+                        const SizedBox(width: 6),
                         Text(
                           "Instagram",
                           style: GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: Colors.black,
+                            fontSize: isSmallScreen ? 11 : 14, // Responsive font size
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 9,
-                ),
+                const SizedBox(width: 9),
                 GestureDetector(
                   onTap: () {
                     _launchUrl("https://www.behance.net/danielkurnia");
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isSmallScreen ? 15 : 20, 
+                      vertical: isSmallScreen ? 8 : 10
+                    ), // Responsive padding
                     decoration: BoxDecoration(
-                        color: Color(0xFFE9FC50),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                      color: const Color(0xFFE9FC50),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
                           'assets/icon/behance.png',
                           fit: BoxFit.cover,
-                          height: 20,
+                          height: isSmallScreen ? 16 : 20, // Responsive icon size
                         ),
-                        SizedBox(
-                          width: 6,
-                        ),
+                        const SizedBox(width: 6),
                         Text(
                           "Behance",
                           style: GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
+                            color: Colors.black,
+                            fontSize: isSmallScreen ? 11 : 14, // Responsive font size
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
@@ -164,9 +176,10 @@ class AppAbout extends StatelessWidget {
             Text(
               "Currently working on this app",
               style: GoogleFonts.jost(
-                  fontSize: 12,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600),
+                fontSize: isSmallScreen ? 10 : 12, // Responsive font size
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),

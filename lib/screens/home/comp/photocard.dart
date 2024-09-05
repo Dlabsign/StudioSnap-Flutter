@@ -7,6 +7,8 @@ class PhotoCard extends StatelessWidget {
     'assets/image/self_photo/TJ1.jpg',
     'assets/image/self_photo/TJ2.jpg',
     'assets/image/self_photo/TJ3.jpg',
+    'assets/image/self_photo/TJ4.jpg',
+    'assets/image/self_photo/TJ5.jpg',
   ];
 
   PhotoCard({super.key});

@@ -27,7 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
     if (formKey.currentState?.validate() ?? false) {
       final newUser = Users(
         user: UserEmail.text, // Atau user ID yang unik
-        nama: UserNama.text,
+        nama: UserEmail.text,
         email: UserEmail.text,
         pass: UserPassword.text,
         tlpn: int.parse(UserTlpn.text),
