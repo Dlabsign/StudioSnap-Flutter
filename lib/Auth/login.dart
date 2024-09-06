@@ -25,16 +25,13 @@ class _LoginPageState extends State<LoginPage> {
       final user = await dbHelper.getUserByEmail(UserEmail.text);
 
       if (user != null && user.pass == UserPassword.text) {
-        // Jika email dan password cocok, navigasi ke HomePage
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => HomePage(
-                  userName:
-                      UserEmail.text)), // Ganti dengan halaman HomePage Anda
+                  userName: UserEmail.text)),
         );
       } else {
-        // Jika tidak cocok, tampilkan pesan error
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Email atau Password Salah!'),
@@ -71,11 +68,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(40, 0, 40, 40),
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1, vertical: 20),
           child: Form(
             key: formKey,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: double.infinity,
@@ -84,14 +81,14 @@ class _LoginPageState extends State<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 30),
+                        padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.05),
                         child: Column(
                           children: [
                             Text(
                               "Capture Your Moment With",
                               style: GoogleFonts.jost(
                                 color: Colors.black,
-                                fontSize: 14,
+                                fontSize: MediaQuery.of(context).size.width * 0.04,
                                 fontWeight: FontWeight.w400,
                                 letterSpacing: 0.24,
                               ),
@@ -100,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                               "StudioSnap",
                               style: GoogleFonts.jost(
                                 color: Colors.black,
-                                fontSize: 46,
+                                fontSize: MediaQuery.of(context).size.width * 0.1,
                                 fontStyle: FontStyle.italic,
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: 0.24,
@@ -130,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                               "Lupa Password?",
                               style: GoogleFonts.jost(
                                 color: const Color(0xFF555555),
-                                fontSize: 12,
+                                fontSize: MediaQuery.of(context).size.width * 0.03,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -140,6 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                 Column(
                   children: [
                     SPButton(text: "Masuk", onPressed: loginUser),
@@ -154,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                             "Belum mempunyai Akun?",
                             style: GoogleFonts.jost(
                               color: Colors.black,
-                              fontSize: 12,
+                              fontSize: MediaQuery.of(context).size.width * 0.03,
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.36,
@@ -174,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                               "Buat Akun",
                               style: GoogleFonts.jost(
                                 color: Colors.black87,
-                                fontSize: 12,
+                                fontSize: MediaQuery.of(context).size.width * 0.03,
                                 fontWeight: FontWeight.w700,
                                 fontStyle: FontStyle.italic,
                                 height: 0,

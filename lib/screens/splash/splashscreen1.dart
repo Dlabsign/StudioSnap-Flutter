@@ -8,6 +8,9 @@ class SplashScreen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final isSmallScreen = size.width < 600;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2F3F4),
       body: Column(
@@ -15,25 +18,29 @@ class SplashScreen1 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              height: MediaQuery.of(context).size.height / 2,
-              width: double.infinity,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(color: Colors.black38),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(
-                    'assets/image/splash/photo2.jpg',
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                ],
-              )),
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
+            height: size.height / 2,
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(color: Colors.black38),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(
+                  'assets/image/splash/photo2.jpg',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: size.height / 2,
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              vertical: isSmallScreen ? 20 : 30,
+              horizontal: isSmallScreen ? 20 : 40,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +53,7 @@ class SplashScreen1 extends StatelessWidget {
                         "Setiap Jepretan terukir sebuah kisah, Booking Studio lebih mudah dengan StudioSnap Sekarang",
                         style: GoogleFonts.jost(
                           color: Color.fromARGB(255, 24, 24, 24),
-                          fontSize: 22,
+                          fontSize: isSmallScreen ? 18 : 22,
                           fontWeight: FontWeight.w400,
                           height: 1.4,
                           letterSpacing: 0.36,
@@ -64,7 +71,7 @@ class SplashScreen1 extends StatelessWidget {
                             "Capture Your moment with",
                             style: GoogleFonts.jost(
                               color: Colors.black,
-                              fontSize: 12,
+                              fontSize: isSmallScreen ? 10 : 12,
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.36,
@@ -78,7 +85,7 @@ class SplashScreen1 extends StatelessWidget {
                             "StudioSnap",
                             style: GoogleFonts.jost(
                               color: Colors.black,
-                              fontSize: 12,
+                              fontSize: isSmallScreen ? 10 : 12,
                               fontWeight: FontWeight.w700,
                               fontStyle: FontStyle.italic,
                               height: 0,
@@ -87,7 +94,7 @@ class SplashScreen1 extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -99,7 +106,7 @@ class SplashScreen1 extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const LogPage()),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),

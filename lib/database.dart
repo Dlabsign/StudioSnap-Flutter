@@ -40,7 +40,7 @@ class DatabaseHelper {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user TEXT,
       nama TEXT,
-      email TEXT,  // Kolom email yang baru
+      email TEXT, 
       pass TEXT,
       tlpn INTEGER
     )
